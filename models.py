@@ -13,7 +13,7 @@ class Base(db.Model):
             onupdate=db.func.current_timestamp())
 
 # Model for poll topics
-class TutTopics(Base):
+class Topics(Base):
     title = db.Column(db.String(500))
 
     # user friendly way to display the object
@@ -21,15 +21,15 @@ class TutTopics(Base):
         return self.title
 
 # Model for poll options
-class TutOptions(Base):
+class Options(Base):
     name = db.Column(db.String(200))
 
 # Polls model to connect topics and options together
-class TutPolls(Base):
+class Polls(Base):
 
     # Columns declaration
-    topic_id = db.Column(db.Integer, db.ForeignKey('tut_topics.id'))
-    option_id = db.Column(db.Integer, db.ForeignKey('tut_options.id'))
+    topic_id = db.Column(db.Integer, db.ForeignKey('topics.id'))
+    option_id = db.Column(db.Integer, db.ForeignKey('options.id'))
     vote_count = db.Column(db.Integer, default=0)
     status = db.Column(db.Boolean) # to mark poll as open or closed
 
@@ -45,9 +45,8 @@ class TutPolls(Base):
 
 
 # Model to store user details
-class TutUsers(Base):
+class Users(Base):
     email = db.Column(db.String(100), unique=True)
     username = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(200))
 
-    
