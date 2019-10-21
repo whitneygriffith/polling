@@ -15,7 +15,7 @@ simplejson==3.11.1
 SQLAlchemy==1.1.11
 Staticfy==1.3
 urllib3==1.21.1
-Werkzeug==0.12.2
+Werkzeug==0.15.3
 beautifulsoup4==4.6.0
 certifi==2017.4.17
 chardet==3.0.4
@@ -33,4 +33,4 @@ simplejson==3.11.1
 SQLAlchemy==1.1.11
 Staticfy==1.3
 urllib3==1.21.1
-Werkzeug==0.12.2
+Werkzeug==0.15.3
